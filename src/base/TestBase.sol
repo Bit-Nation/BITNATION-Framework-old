@@ -22,15 +22,11 @@ contract TestBase is DSTest {
 
     function setUp() {
         core = new FakeCore();
-        base = new Base(core);
+        base = new Base(address(core));
     }
 
-    function test_setupShouldBeCalled() {
-        assert(core.didSetup() == true);
-    }
-
-    function test_delegateIncomingCalls() {
+    function test_delegateIncomingCallsAndCheckSetupHasBeenDone() {
         FakeCore delegate = FakeCore(base);
-        assert(core.didSetup() == true);
+        assert(delegate.didSetup() == true);
     }
 }

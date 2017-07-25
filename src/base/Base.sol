@@ -29,7 +29,7 @@ contract Base is BaseStorage {
         assembly {
             calldatacopy(0x0, 0x0, calldatasize)
             let result := delegatecall(sub(gas, 10000), core, 0x0, calldatasize, 0, return_len)
-            jumpi(invalidJumpLabel, iszero(result))
+            jumpi(0xff, iszero(result)) 
             return(0, return_len)
         }
     }

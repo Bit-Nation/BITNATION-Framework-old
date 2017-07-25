@@ -26,7 +26,7 @@ contract BaseStorage is IBaseStorage, Storage {
     }
 
     /// @dev set the new core
-    /// @param newCoreAddress: address of the core contract
+    /// @param newCoreAddress address of the core contract
     function setCore(address newCoreAddress) internal {
         setStorage(CORE_KEY, uint256(newCoreAddress));
     }

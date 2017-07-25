@@ -5,29 +5,29 @@ import "./BaseStorage.sol";
 
 
 contract User is BaseStorage {
-    function setThis(address newAddr) {
+    function thisSet(address newAddr) {
         super.setThis(newAddr);
     }
 
-    function setCore(address newAddr) {
+    function coreSet(address newAddr) {
         super.setCore(newAddr);
     }
 }
 
 contract TestBaseStorage is DSTest {
-    User store;
+    User user;
 
     function setUp() {
-        store = new User();
+        user = new User();
     }
 
     function test_setAndGetThis() {
-        user.setThis(0x42);
+        user.thisSet(0x42);
         assert(user.getThis() == 0x42);
     }
 
     function test_setAndGetCore() {
-        user.setCore(0x42);
+        user.coreSet(0x42);
         assert(user.getCore() == 0x42);
     }
 }

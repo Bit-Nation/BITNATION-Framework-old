@@ -1,4 +1,4 @@
-pragma soldity ^0.4.13;
+pragma solidity ^0.4.13;
 
 
 /// @title IBaseStorage
