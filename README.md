@@ -29,4 +29,4 @@ The framework is made of smart contracts in solidity. We put a big amount of wor
 
 # Credits
  -  the following was brought to you by Eliott Teissonniere, under the MIT license
- -  some code was inspired by the Aragon project
+ -  some of the code was inspired by the Aragon project
