@@ -3,8 +3,8 @@
 Welcome to the BITNATION framework!
 
 The following is a framework to let you create nearly any kind of entity in the ethereum blockchain, example of such entities include:
- -  a Decentralized Borderless Virtual Nation
- -  a Decentralized Autonomous Organization
+ -  a Decentralized Borderless Voluntary Nation (DBVN)
+ -  a Decentralized Autonomous Organization (DAO)
  -  a tool to manage your personal funds
  -  an embassy
  -  ... (put yours here :wink:)
