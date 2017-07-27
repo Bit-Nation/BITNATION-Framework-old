@@ -17,7 +17,7 @@ The framework is created with smart contracts in Solidity. We dedicated a signif
  -  [ ] add `vault` module
  -  [ ] add permission oracle application (makes use of bylaw)
  -  [ ] members and citizens management application
- -  [ ] add voting module
+ -  [ ] add polling module
  -  [ ] make laboratory
  -  [ ] integrate registry
  -  [ ] improve documentation
