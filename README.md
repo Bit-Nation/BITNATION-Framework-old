@@ -5,8 +5,8 @@ Welcome to the BITNATION framework!
 The following is a framework to let you create nearly any kind of entity in the ethereum blockchain, example of such entities include:
  -  a Decentralized Borderless Voluntary Nation (DBVN)
  -  a Decentralized Autonomous Organization (DAO)
- -  a union, like a marriage or a co-living agreement 
- -  a holon, embassy or a consulate
+ -  a Union, like a Marriage or a Co-Living Agreement 
+ -  a Holon, Embassy or a Consulate
  -  ... (put yours here :wink:)
 
 The framework is created with smart contracts in Solidity. We put a significant amount of work into making the contracts upgradeable, which is still quite rare in the Ethereum smart contract ecosystem.
