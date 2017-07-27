@@ -10,7 +10,7 @@ The following is a framework to let you create nearly any kind of entity in the 
  -  a holon, embassy or a consulate
  -  ... (put yours here :wink:)
 
-The framework is made of smart contracts in solidity. We put a big amount of work into making it upgradeable, which is quite rare in the ethereum world.
+The framework is created with smart contracts in Solidity. We put a significant amount of work into making it upgradeable, which is still quite rare in the Ethereum smart contract ecosystem.
 
 
 # TODO list
