@@ -6,6 +6,7 @@ The following is a framework to let you create nearly any kind of entity in the 
  -  a Decentralized Borderless Voluntary Nation (DBVN)
  -  a Decentralized Autonomous Organization (DAO)
  -  a tool to manage your personal funds
+ -  a union, like a marriage 
  -  an holon, embassy or a consulate
  -  ... (put yours here :wink:)
 
