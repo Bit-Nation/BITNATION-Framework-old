@@ -21,8 +21,6 @@ contract Core is ICore, BaseStorage {
 
     bytes4 constant VAULT_DEPOSIT_SIG = bytes4(sha3("deposit(address,uint256)"));
 
-    address constant DEFAULT_PERMISSION_ORACLE = 0x0;
-
     modifier onlyOnce(string key) {
         require(getStorage(sha3(ONLY_ONCE_KEY, key)) == 0);
         setStorage(sha3(ONLY_ONCE_KEY, key), 1);
@@ -31,7 +29,6 @@ contract Core is ICore, BaseStorage {
 
     /// @param baseCoreAddr set by the dbvn, not used at the moment
     function setup(address baseCoreAddr) onlyOnce("setup") {
-         setPermissionOracle(DEFAULT_PERMISSION_ORACLE);
          // should deploy vault
     }
 
