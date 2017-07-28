@@ -161,7 +161,7 @@ contract Core is ICore, BaseStorage {
     // Utils to add modules or applications, mostly copied from Aragon
 
     /// @dev that function return the storage key associated to a signature
-    function keyForSig(bytes4 sig) internal returns (bytes32) {
+    function keyForSig(bytes4 sig) internal constant returns (bytes32) {
         return sha3(0x1, 0x1, sig); // 0x1, 0x0 already used for the permission oracle
     }
 
@@ -200,7 +200,7 @@ contract Core is ICore, BaseStorage {
         }
     }
 
-    function identifier(bool isModule) internal returns (uint) {
+    function identifier(bool isModule) internal constant returns (uint) {
         return isModule ? 2 : 1;
     }
 
