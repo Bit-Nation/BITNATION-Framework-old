@@ -126,6 +126,11 @@ contract Core is ICore, BaseStorage {
         uninstall(sigs, true);
     }
 
+    function upgradeModule(address module, bytes4[] oldSigs, bytes4[] newSigs) {
+        uninstallModule(oldSigs);
+        installModule(module, newSigs);
+    }
+
     /// @param application application address
     /// @param sigs array of function signatures (ordered)
     function installApplication(address application, bytes4[] sigs) {
@@ -134,6 +139,11 @@ contract Core is ICore, BaseStorage {
 
     function uninstallApplication(bytes4[] sigs) {
         uninstall(sigs, false);
+    }
+
+    function upgradeApplication(address application, bytes4[] oldSigs, bytes4[] newSigs) {
+        uninstallApplication(oldSigs);
+        installApplication(application, newSigs);
     }
 
     function upgradeCore(address newCore) {
