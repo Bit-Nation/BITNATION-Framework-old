@@ -16,8 +16,10 @@ import "../apps/IApplication.sol";
 /// @dev permissions to use the different functions are controlled via the "permissions" application
 contract Core is ICore, BaseStorage {
     uint256 constant ONLY_ONCE_KEY = 0x1;
+    uint256 constant VERSION = 0x1;
 
     bytes32 constant PERMISSION_ORACLE_KEY = sha3(0x1, 0x0);
+    bytes32 constant VERSION_KEY = sha3(0x1, 0x1);
 
     bytes4 constant VAULT_DEPOSIT_SIG = bytes4(sha3("deposit(address,uint256)"));
 
@@ -29,7 +31,12 @@ contract Core is ICore, BaseStorage {
 
     /// @param baseCoreAddr set by the dbvn, not used at the moment
     function setup(address baseCoreAddr) onlyOnce("setup") {
-         // should deploy vault
+         // For versioning purposes, set a "version" key
+         setStorage(VERSION_KEY, VERSION);
+    }
+
+    function version() constant returns (uint256 version) {
+         return getStorage(VERSION_KEY);
     }
 
     // Functions starting the dispatch process
