@@ -13,6 +13,7 @@ The framework is created with smart contracts in Solidity. We dedicated a signif
 
 
 # TODO list
+ -  [ ] add events
  -  [ ] add more tests
  -  [ ] add `vault` module
  -  [ ] add permission oracle application (makes use of bylaw)
