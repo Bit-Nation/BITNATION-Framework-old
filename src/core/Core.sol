@@ -48,7 +48,7 @@ contract Core is ICore, BaseStorage {
         require(canProceed(sender, token, value, data));
 
         // Deposit the money
-        deposit(token, value);
+        doDeposit(token, value);
 
         // if there is no data, no need to parse them!
         if (data.length == 0) return;
@@ -83,7 +83,7 @@ contract Core is ICore, BaseStorage {
         }
     }
 
-    function deposit(address token, uint256 value) internal {
+    function doDeposit(address token, uint256 value) internal {
         var (vault,) = getFromSig(VAULT_DEPOSIT_SIG);
         if (value == 0 || vault == 0) return;
 
@@ -94,6 +94,8 @@ contract Core is ICore, BaseStorage {
 
     /// @param newOracle address of the permissions application
     function setPermissionOracle(address newOracle) {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         setStorage(PERMISSION_ORACLE_KEY, uint256(newOracle));
     }
 
@@ -115,14 +117,20 @@ contract Core is ICore, BaseStorage {
     /// @param module module address
     /// @param sigs array of function signatures (ordered)
     function installModule(address module, bytes4[] sigs) {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         install(module, sigs, true);
     }
 
     function uninstallModule(bytes4[] sigs) {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         uninstall(sigs, true);
     }
 
     function upgradeModule(address module, bytes4[] oldSigs, bytes4[] newSigs) {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         uninstallModule(oldSigs);
         installModule(module, newSigs);
     }
@@ -130,24 +138,34 @@ contract Core is ICore, BaseStorage {
     /// @param application application address
     /// @param sigs array of function signatures (ordered)
     function installApplication(address application, bytes4[] sigs) {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         install(application, sigs, false);
     }
 
     function uninstallApplication(bytes4[] sigs) {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         uninstall(sigs, false);
     }
 
     function upgradeApplication(address application, bytes4[] oldSigs, bytes4[] newSigs) {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         uninstallApplication(oldSigs);
         installApplication(application, newSigs);
     }
 
     function upgradeCore(address newCore) {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         setCore(newCore);
     }
 
     /// @notice very sensible function, destroy the entity
     function kill() {
+        require(canProceed(msg.sender, 0, 0, msg.data));
+
         address me = getThis();
 
         // Check if called in entity context
